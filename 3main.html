@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoWorld</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        /* Прозрачный стиль Navbar */
+        .navbar {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .nav-link {
+            color: #fff !important;
+            transition: 0.3s;
+        }
+        .nav-link:hover {
+            color: #f39c12 !important;
+        }
+        /* Поисковая строка */
+        .search-box {
+            border: none;
+            border-bottom: 2px solid white;
+            background: transparent;
+            color: white;
+            outline: none;
+            padding: 5px;
+            margin-right: 10px;
+        }
+        ::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .search-btn {
+            border: none;
+            background: none;
+            color: white;
+        }
+        .search-btn:hover {
+            color: #f39c12;
+        }
+        /* Значки соцсетей */
+        .social-icons a {
+            color: white;
+            margin-left: 10px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            color: #f39c12;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Навигационная панель -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <!-- Слайдер Bootstrap -->
+
+
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+            <i class="bi bi-car-front-fill"></i> AutoWorld
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="file:///C:/Users/Yryskeldi/Desktop/Python%20course/AutoWorld/%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F.html">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="file:///C:/Users/Yryskeldi/Desktop/Python%20course/AutoWorld/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8.html">Категории</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="file:///C:/Users/Yryskeldi/Desktop/Python%20course/AutoWorld/%D0%9D%D0%BE%D0%B2%D0%B8%D0%BD%D0%BA%D0%B8.html">Новинки</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="file:///C:/Users/Yryskeldi/Desktop/Python%20course/AutoWorld/%D0%9E%20%D0%BD%D0%B0%D1%81.html">О нас</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="file:///C:/Users/Yryskeldi/Desktop/Python%20course/AutoWorld/%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D1%8B.html">Контакты</a>
+                </li>
+            </ul>
+            <!-- Поисковая строка -->
+            <form class="d-flex ms-3">
+                <input class="search-box" type="text" placeholder="Поиск..." aria-label="Search">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </form>
+            <!-- Соцсети -->
+            <div class="social-icons ms-3">
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/?locale=ru_RU"><i class="fab fa-facebook"></i></a>
+                <a href="file:///C:/Users/Yryskeldi/Desktop/Python%20course/AutoWorld/Phone.html"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="c:\Users\Yryskeldi\Desktop\Python course\AutoWorld\Autoworld image1.png" class="d-block w-100" alt="Машина 1">
+        </div>
+        <div class="carousel-item">
+            <img src="c:\Users\Yryskeldi\Desktop\Python course\AutoWorld\Autoworld image 2.jpg" class="d-block w-100" alt="Машина 2">
+        </div>
+        <div class="carousel-item">
+            <img src="c:\Users\Yryskeldi\Desktop\Python course\AutoWorld\Autoworld image 3.jpg" class="d-block w-100" alt="Машина 3">
+        </div>
+    </div>
+    <!-- Кнопки переключения -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Подключение Bootstrap и Font Awesome -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+<footer class="bg-dark text-light py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <!-- О нас -->
+            <div class="col-md-4">
+                <h5>О нас</h5>
+                <p>AutoWorld — ваш надёжный источник информации о мире автомобилей. Мы предоставляем последние новости, обзоры и рекомендации.</p>
+            </div>
+            
+            <!-- Контактная информация -->
+            <div class="col-md-4">
+                <h5>Контакты</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-phone"></i> +996 708 933 777</li>
+                    <li><i class="fas fa-envelope"></i> info@autoworld.com</li>
+                </ul>
+            </div>
+            
+            <!-- Социальные сети -->
+            <div class="col-md-4">
+                <h5>Мы в соцсетях</h5>
+                <a href="https://www.instagram.com/" class="text-light me-2"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://www.facebook.com/" class="text-light me-2"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="https://twitter.com/" class="text-light"><i class="fab fa-twitter fa-lg"></i></a>
+            </div>
+        </div>
+        <hr class="my-3 border-light">
+        <p class="text-center">© 2025 AutoWorld. Все права защищены.</p>
+    </div>
+</footer>
+
+</html>
