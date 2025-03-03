@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoWorld</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body { background: #f8f9fa; }
+        .navbar { background: rgba(0, 0, 0, 0.9); }
+        .nav-link { color: #fff !important; transition: 0.3s; }
+        .nav-link:hover { color: #f39c12 !important; }
+        .search-box { border: none; border-bottom: 2px solid white; background: transparent; color: white; outline: none; padding: 5px; }
+        ::placeholder { color: rgba(255, 255, 255, 0.7); }
+        .search-btn { border: none; background: none; color: white; }
+        .search-btn:hover { color: #f39c12; }
+        .social-icons a { color: white; margin-left: 10px; font-size: 18px; transition: 0.3s; }
+        .social-icons a:hover { color: #f39c12; }
+        .card { margin-bottom: 20px; transition: transform 0.3s; }
+        .card:hover { transform: scale(1.05); }
+        .card-img-top { height: 200px; object-fit: cover; }
+        .carousel-item img { height: 300px; object-fit: cover; }
+        .sidebar { background: #343a40; color: white; padding: 20px; position: fixed; top: 0; right: -300px; width: 300px; height: 100%; transition: 0.3s; z-index: 1000; }
+        .sidebar.active { right: 0; }
+        .sidebar h4 { color: #f39c12; }
+        .sidebar ul { list-style: none; padding: 0; }
+        .sidebar ul li { margin-bottom: 10px; }
+        .sidebar ul li a { color: white; text-decoration: none; transition: 0.3s; }
+        .sidebar ul li a:hover { color: #f39c12; cursor: pointer; }
+        .sidebar-toggle { position: fixed; top: 20px; right: 20px; font-size: 24px; color: white; cursor: pointer; z-index: 1001; background: #343a40; padding: 10px; border-radius: 50%; }
+        .about-us { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin-top: 20px; }
+        .about-us img { width: 100px; height: 100px; border-radius: 50%; margin-bottom: 20px; }
+        .about-us h3 { color: #343a40; }
+        .about-us p { color: #666; }
+        .stars { color: #f39c12; font-size: 24px; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+            <i class="bi bi-car-front-fill"></i> AutoWorld
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Категории</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Новинки</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">О нас</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Контакты</a></li>
+            </ul>
+            <form class="d-flex ms-3" id="searchForm">
+                <input class="search-box" type="text" placeholder="Поиск..." id="searchInput">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </form>
+            <div class="social-icons ms-3">
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="tel:+1234567890"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Кнопка для открытия/закрытия сайдбара -->
+<div class="sidebar-toggle" onclick="toggleSidebar()">
+    <i class="fas fa-bars"></i>
+</div>
+
+<!-- Сайдбар -->
+<div class="sidebar">
+    <h4>Меню</h4>
+    <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Новинки</a></li>
+        <li><a href="#">Контакты</a></li>
+    </ul>
+    <div class="social-icons">
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="tel:+1234567890"><i class="fas fa-phone"></i></a>
+    </div>
+</div>
+
+<div class="container-fluid mt-5 pt-5">
+    <div class="row">
+        <!-- Основной контент -->
+        <div class="col-md-12">
+            <!-- Блок "О нашей компании" -->
+            <div class="about-us text-center">
+                <img src="images/Autoworld image1.png" alt="Профиль компании">
+                <h3>О нашей компании</h3>
+                <p>
+                    Мы — AutoWorld, ваш надежный партнер в мире автомобилей. Мы предлагаем широкий выбор новых и подержанных автомобилей от ведущих производителей. Наша цель — сделать процесс покупки автомобиля простым и приятным.
+                </p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <!-- Список автомобилей -->
+            <h2 class="text-center mb-4">Список автомобилей</h2>
+            <div class="row" id="carList">
+                <!-- Машины будут добавляться сюда через JavaScript -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Модальные окна для автомобилей -->
+<!-- Модальные окна будут добавляться динамически через JavaScript -->
+
+<!-- Модальное окно оформления заказа -->
+<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderModalLabel">Оформление заказа</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <form id="orderForm">
+                    <div class="mb-3">
+                        <label for="firstName" class="form-label">Имя</label>
+                        <input type="text" class="form-control" id="firstName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lastName" class="form-label">Фамилия</label>
+                        <input type="text" class="form-control" id="lastName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Телефон</label>
+                        <input type="tel" class="form-control" id="phone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="payment" class="form-label">Способ оплаты</label>
+                        <select class="form-select" id="payment" required>
+                            <option value="creditCard">Кредитная карта</option>
+                            <option value="debitCard">Mbank</option>
+                            <option value="debitCard">Bakai bank</option>
+                            <option value="debitCard">Companion bank</option>
+                            <option value="debitCard">ЭлКарт</option>
+                            <option value="paypal">VISA</option>
+                            <option value="paypal">PayPal</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Оформить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно подтверждения заказа -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel">Успешно!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <p>Ваш заказ успешно оформлен!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-dark text-light py-4 mt-5">
+    <div class="container text-center">
+        <p>© 2025 AutoWorld. Все права защищены.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Данные автомобилей
+    const cars = [
+        { name: "BMW X5", price: "$50,000", image: "images/bmw x5.jfif", year: "2023", engine: "3.0L Turbo", color: "Чёрный" },
+        { name: "Audi Q7", price: "$60,000", image: "images/audi q7.jfif", year: "2023", engine: "3.0L Turbo", color: "Белый" },
+        { name: "Mercedes-Benz GLE", price: "$55,000", image: "images/Mercedes-Benz AMG GLE 53.jfif", year: "2023", engine: "3.0L Turbo", color: "Серебристый" },
+        { name: "Lexus ES300h", price: "$45,000", image: "images/lexus es300h.webp", year: "2023", engine: "2.5L Hybrid", color: "Черный" },
+        { name: "Audi S7", price: "$60,000", image: "images/audi s7.jpg", year: "2023", engine: "4.0L V8", color: "Белый" },
+        { name: "Camry 70", price: "$35,000", image: "images/camry 70.jpg", year: "2023", engine: "2.5L", color: "Серебристый" },
+        { name: "BMW M5 F90", price: "$110,000", image: "images/bmw m5 f90.jpg", year: "2023", engine: "4.4L V8", color: "Серебристый" },
+        { name: "Li9", price: "$40,000", image: "images/li 9.jpg", year: "2023", engine: "2.0L", color: "Зеленый" },
+        { name: "Mercedes S-Class", price: "$130,000", image: "images/mers s class.jpg", year: "2023", engine: "3.0L Turbo", color: "белый" },
+        { name: "Toyota RAV4", price: "$30,000", image: "images/rav 4.jfif", year: "2023", engine: "2.5L", color: "Красный" },
+        { name: "Honda CR-V", price: "$32,000", image: "images/honda cr v.jfif", year: "2023", engine: "1.5L Turbo", color: "Серый" },
+        { name: "Ford Mustang", price: "$45,000", image: "images/ford mustang.jpg", year: "2023", engine: "5.0L V8", color: "Синий" },
+        { name: "Chevrolet Camaro", price: "$40,000", image: "images/camaro.jpg", year: "2023", engine: "6.2L V8", color: "Жёлтый" },
+        { name: "Volkswagen Golf", price: "$28,000", image: "images/golf.jfif", year: "2023", engine: "2.0L", color: "Белый" },
+        { name: "Hyundai Tucson", price: "$29,000", image: "images/hyundai.jpg", year: "2023", engine: "2.5L", color: "Серебристый" }
+    ];
+
+    // Функция для отображения автомобилей
+    function displayCars(filteredCars = cars) {
+        const carList = document.getElementById('carList');
+        carList.innerHTML = '';
+        filteredCars.forEach((car, index) => {
+            carList.innerHTML += `
+                <div class="col-md-4">
+                    <div class="card animate__animated animate__fadeIn">
+                        <img src="${car.image}" class="card-img-top" alt="${car.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${car.name}</h5>
+                            <p class="card-text">Цена: ${car.price}</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#carModal${index}">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Добавляем модальные окна для каждой машины
+        cars.forEach((car, index) => {
+            document.body.innerHTML += `
+                <div class="modal fade" id="carModal${index}" tabindex="-1" aria-labelledby="carModalLabel${index}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="carModalLabel${index}">Информация о ${car.name}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Год выпуска: ${car.year}</p>
+                                <p>Двигатель: ${car.engine}</p>
+                                <p>Цвет: ${car.color}</p>
+                                <p>Цена: ${car.price}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">Купить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    // Поиск автомобилей
+    document.getElementById('searchForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        const filteredCars = cars.filter(car => car.name.toLowerCase().includes(searchTerm));
+        displayCars(filteredCars);
+    });
+
+    // Открытие/закрытие сайдбара
+    function toggleSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.classList.toggle('active');
+    }
+
+    // Обработка формы заказа
+    document.getElementById('orderForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Предотвращаем перезагрузку страницы
+        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+        successModal.show(); // Показываем модальное окно "Успешно оформлено"
+    });
+
+    // Инициализация
+    displayCars();
+</script>
+</body>
+</html>
